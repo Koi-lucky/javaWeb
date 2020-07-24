@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+
+    <!-- 方法1 -->
+    <!-- style标签专门用于定义CSS样式 -->
+    <!--
+    <style type="text/css">
+        此处代码都省略（在1.css文件中）
+    </style>
+    -->
+
+
+    <!-- 方法2 -->
+    <!-- link标签专门用于引入css样式的代码 -->
+    <link rel="stylesheet" type="text/css" href="1.css">
+
+</head>
+<body>
+
+    <div class="rg_layout">
+        <!-- div标签默认独占一行 -->
+        <div class="rg_left">
+            <p>新用户注册</p>
+            <p>USER REGISTER</p>
+        </div>
+
+        <div class="rg_center">
+            <div class="rg_form">
+                <!-- 定义页面 form -->
+
+                <!--
+                    form标签是表单标签
+                            action属性设置提交的服务器地址
+                            method属性设置提交的方式：post或get
+                -->
+                <form action=" " method="post">
+                    <table>
+                        <tr>
+                            <td class="td_left"><label for="username"></label>用户名</td>
+                            <td class="td_right"><input type="text" name="username" id="username" placeholder="请输入用户名"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label for="password"></label>密码</td>
+                            <td class="td_right"><input type="password" name="password" id="password" placeholder="请输入密码"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label for="email"></label>Email</td>
+                            <td class="td_right"><input type="email" name="email" id="email" placeholder="请输入邮箱"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label for="name"></label>姓名</td>
+                            <td class="td_right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label for="tel"></label>手机号</td>
+                            <td class="td_right"><input type="text" name="tel" id="tel" placeholder="请输入手机号"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label>性别</label></td>
+                            <td class="td_right"><input type="radio" name="gender" value="男"> 男
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gender" value="女"> 女
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label for="birthday"></label>出生日期</td>
+                            <td class="td_right"><input type="date" name="birthday" id="birthday" placeholder="请输入出生日期"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label for="checkcode"></label>验证码</td>
+                            <td class="td_right"><input type="text" name="checkcode" id="checkcode" placeholder="请输入验证码">
+                                <img id="img_check" src="../image/verify_code.jpg">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"><label>省份</label></td>
+                            <td class="td_right">
+                                <select name="province">  ////select表示下拉列表框
+                                    <option value=" ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---- 请选择省/市/区 ---- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                    <option value="1">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;北京&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</option>  //option表示下拉列表框中的选项
+                                    <option value="2">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;上海&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</option>
+                                    <option value="3">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;广州&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</option>
+                                    <option value="4">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;陕西&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <!--
+                            input type="reset"   是重置按钮     value属性修改按钮上的文本
+                            input type="submit"  是提交按钮     value属性修改按钮上的文本
+                            input type="button"  是按钮         value属性修改按钮上的文本
+                            -->
+                            <td colspan="2" align="center"><input type="submit" value="注册" id="btn_sub"></td>
+                        </tr>
+
+                    </table>
+                </form>
+            </div>
+        </div>
+
+        <div class="rg_right">
+            <p>已有账号?<a href=" ">立即登录</a></p> <!-- 要明白超链接去下划线的操作 -->
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="openbtn" type="button" value="打开窗口">
+<input id="closebtn" type="button" value=关闭已经打开的窗口>
+
+<input type="button" id="btn" value="刷新" >
+<input type="button" id="gotoBaidu" value="去百度" >
+
+
+<script>
+/* 1.与弹出框有关的方法 */
+
+/* ①alert ：显示带有 一段消息 和 一个确认按钮 的【警告框】 */
+alert("hello world!");
+window.alert("hey a~");
+
+/* ②confirm ：显示带有 一段消息 以及 确认按钮 和取消按钮 的【对话框】*/
+/* 如果用户点击确定按钮，方法返回true，否则的话，方法返回false */
+var flag = confirm("您确定要退出吗？？");
+if (flag) {
+    //退出操作
+    alert("欢迎再次光临~~");
+} else {
+    //提示。手别抖!!!
+    alert("手别抖！！！");
+}
+
+/* ③prompt：显示 可提示用户输入 的【对话框】*/
+var result = prompt("请输入用户名");
+alert(result);
+
+
+/* 2.与打开关闭有关的方法 */
+/* ① close：关闭浏览器窗口 */ //【注意】close方法——谁调用我，我关谁
+var closeIt = document.getElementById("closebtn");
+closeIt.onclick = function () {
+    //close();/*close关闭的是自己的窗口，不是打开的新窗口*/
+    newWindow.close();/* 这个才是关闭新打开的窗口 */
+}
+
+/* ② open：打开一个新的浏览器 , 会返回一个新的浏览器对象，可以用于下一步关闭操作*/
+var openIt = document.getElementById("openbtn");
+var newWindow;
+openIt.onclick = function () { newWindow = open();/*打开新窗口*/ }
+
+
+
+/* 3.与定时器有关的方法 */
+/* ① setTimeout：（一次性的定时器）在指定的毫秒数之后调用函数或计算表达式 【类似于计时炸弹】
+*     clearTimeout：取消由setTimeout方法设置的timeout  */
+var id1 = setTimeout(fun,2000);//两秒之后【只炸一次】。两个参数：第一个是js代码或者方法对象，第二个是毫秒值。返回值是一个编号，用于取消操作
+clearTimeout(id1);//取消上面的操作，不会爆炸
+function fun() {
+    alert("BoomBoomBoom~~");
+}
+
+/* ② setInterval：（循环定时器）按照指定的周期（以毫秒计）来调用函数或计算表达式  【类似于每天都响的闹钟】
+*     clearInterval：取消由setInterval方法设置的timeout */
+var id2 = setInterval(fun,2000);//每两秒炸一次（循环的）
+clearInterval(id2);
+
+
+var history1 = history;//获取历史窗口
+
+
+
+/* 4.location对象 */
+/* ① reload方法：重新加载 */
+//1.获取按钮
+var btn = document.getElementById("btn");
+// 2.绑定单击事件
+btn.onclick = function (ev) {
+    //3.刷新页面
+    location.reload();
+}
+
+/* ② href方法：访问指定页面 */
+//点击按钮，去访问百度页面
+//1.获取按钮
+var gotoBaidu = document.getElementById("gotoBaidu");
+// 2.绑定单击事件
+gotoBaidu.onclick = function (ev) {
+    //3.获取指定页面
+    location.href = "https://www.baidu.com";
+}
+
+</script>
+
+</body>
+</html>

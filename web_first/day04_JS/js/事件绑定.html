@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+
+</head>
+<body>
+
+<!-- 方式① 直接在html标签上指定时间的属性（操作），属性值就是js代码 -->
+<img id="light1" src="../image/off.gif" alt="" onclick="fun1();"> // onclick单击事件
+<!-- 方式② 通过js获取元素对象，指定事件的属性，设置一个函数 -->
+<img id="light2" src="../image/off.gif" alt="">
+
+
+<script>
+
+    /* 方式① 的js代码 */
+    function fun1() {
+        alert("我被点了~");
+        alert("我又被点了~");
+    }
+
+    /* 方式② 的js操作代码 */
+    function fun2() {
+        alert("咋老点我！");
+    }
+    /* 获取light2对象 */
+    var light2 = document.getElementById("light2");
+    /* 绑定事件 */
+    light2.onclick = fun2();
+
+
+</script>
+
+</body>
+</html>

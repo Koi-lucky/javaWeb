@@ -1,0 +1,91 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{  /*标签名选择器*/
+    background: url("../image/jiangxuan_5.jpg") no-repeat center;
+}
+
+.rg_layout{  /* 类选择器 */
+    width: 900px; /* 要设置宽度、高度，就必须得设置框(border)的参数 */
+    height: 500px;
+    border: 8px solid #EEEEEE;  /*solid为实线边框*/
+    background-color: white;
+    margin: auto; /*让框框居中(相对于整个屏幕居中)*/
+    margin-top: 15px;
+}
+
+.rg_left{
+    /*border: 1px solid red;*/
+    float: left;/*左浮动*/
+}
+
+.rg_left > p:first-child{
+    color: #FFD026; /* 字体颜色 */
+    font-size: 20px;/* 字体大小 */
+}
+
+.rg_left > p:last-child{
+    color: #A6A6A6;
+    font-size: 20px;
+}
+
+.rg_center{
+    /*border: 1px solid red;*/
+    float: left;
+
+    width: 450px;
+
+}
+
+.rg_right{
+    /*border: 1px solid red;*/
+    float: right;//右浮动
+margin: 15px;
+}
+
+.rg_right > p:first-child{
+    font-size: 15px;
+}
+
+.rg_right p a {
+    color: pink;
+}
+
+.td_left {
+    width: 100px;
+    text-align: right;  /*文本居中*/
+    height: 45px;
+}
+
+.td_right {
+    padding-left: 50px;
+}
+/* 组合选择器  —— 多个选择器用一个代码 */
+#username,#password,#email,#name,#checkcode,#birthday,#tel { /* id选择器 */
+    width: 245px;
+    height: 32px;
+    border: 1px solid #A6A6A6;
+    /*设置圆角边框*/
+    brder-radius: 5px;
+    padding-left: 10px;
+}
+
+#checkcode {  /*  id选择器 */
+    width: 110px;
+}
+
+#img_check {
+    height: 30px;
+    /*设置垂直居中*/
+    vertical-align: middle;
+}
+
+#btn_sub {
+    width: 150px;
+    height: 40px;
+    background-color: #FFD026;
+    border: 1px solid #FFD026;
+}
