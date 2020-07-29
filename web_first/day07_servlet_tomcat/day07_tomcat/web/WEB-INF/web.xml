@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- 配置Servlet -->
+    <servlet>
+        <servlet-name>test01</servlet-name><!--起个名字-->
+        <servlet-class>servlet.Servlet_test01</servlet-class> <!-- 全类名 -->
+    </servlet>
+
+    <!-- 映射 -->
+    <servlet-mapping>
+        <servlet-name>test01</servlet-name>
+        <url-pattern>/test01</url-pattern> <!-- 名字前加斜杠 表示：资源名称-->
+    </servlet-mapping>
+
+
+    <!-- 配置Servlet -->
+    <servlet>
+        <servlet-name>test02</servlet-name><!--起个名字-->
+        <servlet-class>servlet.Servlet_test02</servlet-class> <!-- 全类名 -->
+
+        <!--指定Servlet的创建时机
+                1.第一次被访问时，创建
+                    <load-on-startup>的值设为负数
+                2.在服务器启动时，创建
+                    <load-on-startup>的值设为0或正整数（一般去0~10的数）
+        -->
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <!-- 映射 -->
+    <servlet-mapping>
+        <servlet-name>test02</servlet-name>
+        <url-pattern>/test02</url-pattern> <!-- 名字前加斜杠 表示：资源名称-->
+    </servlet-mapping>
+
+</web-app>
