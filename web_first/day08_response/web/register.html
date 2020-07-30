@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        /*
+        * 分析：
+        *       点击超链接或者图片，需要换一张
+        *       1.给超链接和图片绑定单击事件
+        *       2.重新设置图片的src属性
+        * */
+        window.onload = function (ev) {
+            //1.获取图片对象
+            var img = document.getElementById("checkCode");
+            // 2.绑定单击事件
+            img.onclick = function (ev1) {
+                //加时间戳
+                var date = new Date().getTime();
+
+                img.src = "/day08_response_war_exploded/checkCodeServlet" + date;
+            }
+        }
+
+        window.onload = function (ev) {
+            //1.获取超链接对象
+            var textchange = document.getElementById("change");
+            // 2.绑定单击事件
+            textchange.onclick = function (ev1) {
+                //加时间戳
+                var date = new Date().getTime();
+
+                textchange.src = "/day08_response_war_exploded/checkCodeServlet" + date;
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+<img id="checkCode" src="/day08_response_war_exploded/checkCodeServlet" alt="">
+<a href="" id="change">看不清？换一张</a>
+
+</body>
+</html>
